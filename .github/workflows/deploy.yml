@@ -1,4 +1,4 @@
-name: Deploy to Production Server
+name: Deploy to Server
 
 on:
   push:
@@ -7,13 +7,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Debug - List workspace files
-        run: ls -la $GITHUB_WORKSPACE
 
       - name: Deploy via SSH
         uses: appleboy/ssh-action@master
@@ -21,22 +17,10 @@ jobs:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          script_timeout: 15m
-          ssh_verbose: true  # Включить детальное логирование
           script: |
-            # Диагностические команды
-            echo "=== Starting deployment ==="
-            whoami
-            pwd
-            ls -la /var/www/html
-            
-            # Основной деплой
             cd /var/www/html
             sudo rm -rf ./*
             sudo cp -r $GITHUB_WORKSPACE/* .
             sudo chown -R www-data:www-data /var/www/html
             sudo chmod -R 755 /var/www/html
             sudo systemctl restart nginx
-            
-            echo "=== Deployment successful ==="
