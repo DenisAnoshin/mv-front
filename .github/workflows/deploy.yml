@@ -17,10 +17,20 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    - name: Rsync files
+    - name: Verify SSH connection
       run: |
-        echo "Trying to connect to ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}"
-        ssh -v -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} exit
+        echo "Testing connection to ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}"
+        ssh -T -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "echo 'SSH connection successful!'; ls -ld ${{ secrets.TARGET_DIR }}"
+
+    - name: Deploy files via Rsync
+      run: |
+        echo "Starting deployment to ${{ secrets.TARGET_DIR }}"
         rsync -avz --delete --progress \
-        -e "ssh -o StrictHostKeyChecking=no" \
-        ./ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:${{ secrets.TARGET_DIR }}/
+          --exclude='.git/' \
+          --exclude='.github/' \
+          -e "ssh -o StrictHostKeyChecking=no" \
+          ./ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:${{ secrets.TARGET_DIR }}/
+        
+        echo "Verifying deployment"
+        ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} \
+          "ls -la ${{ secrets.TARGET_DIR }} | head -n 5"
