@@ -1,0 +1,38 @@
+name: Deploy to Production Server
+
+on:
+  push:
+    branches: [ master ]  # Триггер на пуш в master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Получаем код из репозитория (включая билд)
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Подключаемся к серверу и разворачиваем файлы
+      - name: Deploy files via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Переходим в папку сайта
+            cd /var/www/html
+
+            # Удаляем старые файлы (кроме скрытых, например .env)
+            sudo rm -rf ./*
+
+            # Копируем новые файлы из репозитория
+            sudo cp -r $GITHUB_WORKSPACE/* .
+
+            # Даем правильные права (если нужно)
+            sudo chown -R www-data:www-data /var/www/html
+            sudo chmod -R 755 /var/www/html
+
+            # Перезагружаем Nginx (если используется)
+            sudo systemctl restart nginx
