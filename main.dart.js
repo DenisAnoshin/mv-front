@@ -83645,7 +83645,7 @@ s.toString
 return B.d.b7(r,s)},
 $S:481}
 A.awW.prototype={
-$1(a){return new A.mS(new A.a80("http://localhost:3000"))},
+$1(a){return new A.mS(new A.a80("http://37.220.82.230:3000"))},
 $S:482}
 A.NK.prototype={
 O(a){var s=4280953913,r=null,q=A.aH(s),p=A.aH(s),o=A.bT(r,r,B.j,r,r,r,r,r,r,r,r,r,r,r,r,r,r,!0,r,r,r,r,r,r,r,r)
@@ -83915,15 +83915,15 @@ m=A.r(o,n)
 m.m(0,"transports",A.b(["websocket"],t.s))
 m.E(0,"autoConnect")
 m.m(0,"query",A.a7(["Authorization","Bearer "+a1],n,n))
-l=A.ff("ws://localhost:3001")
+l=A.ff("ws://37.220.82.230:3001")
 k=l.geC()+"://"+l.gkv(l)+":"+l.gox(l)
 j=l.gdY(l)
 i=$.awk.ae(0,k)&&$.awk.h(0,k).d.ae(0,j)
 h=J.d(m.h(0,"forceNew"),!0)||J.d(m.h(0,"force new connection"),!0)||!1===m.h(0,"multiplex")||i
 g=A.bE("io")
-if(h){$.aLp().aW(B.r,"ignoring socket cache for ws://localhost:3001",null,null)
-g.b=A.aE3(m,"ws://localhost:3001")}else{f=$.awk.h(0,k)
-if(f==null){f=A.aE3(m,"ws://localhost:3001")
+if(h){$.aLp().aW(B.r,"ignoring socket cache for ws://37.220.82.230:3001",null,null)
+g.b=A.aE3(m,"ws://37.220.82.230:3001")}else{f=$.awk.h(0,k)
+if(f==null){f=A.aE3(m,"ws://37.220.82.230:3001")
 $.awk.m(0,k,f)}g.b=f}if(l.glG(l).length!==0&&m.h(0,"query")==null)m.m(0,"query",l.glG(l))
 else if(t.f.b(m.h(0,"query")))m.m(0,"query",A.aAu(m.h(0,"query")))
 f=g.aX()
