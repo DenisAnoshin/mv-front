@@ -84350,7 +84350,7 @@ else k=A.hz(m,o.w?A.fZ(A.tT(m,m,m,m,m,m,m,m,m,m),m,m):A.AQ(new A.ao6(o),k,new A.
 k=A.b([A.aEF(60,k,0)],s)
 r=A.hz(B.ai,A.hz(m,m,B.B,m,new A.d5(B.mn,m,m,A.e0(5),m,m,B.aw),m,5,m,m,m,m,50),B.B,m,m,m,15,m,m,m,m,m)
 q=o.e.length
-if(q===0)q=A.fZ(A.bS("AI chat is empty",m,m,m,A.bT(m,m,A.aV(B.d.aC(76.5),B.j.G()>>>16&255,B.j.G()>>>8&255,B.j.G()&255),m,m,m,m,m,m,m,m,20,m,m,m,m,m,!0,m,m,m,m,m,m,m,m),m,m),m,m)
+if(q===0&&!o.x)q=A.fZ(A.bS("AI chat is empty",m,m,m,A.bT(m,m,A.aV(B.d.aC(76.5),B.j.G()>>>16&255,B.j.G()>>>8&255,B.j.G()&255),m,m,m,m,m,m,m,m,20,m,m,m,m,m,!0,m,m,m,m,m,m,m,m),m,m),m,m)
 else q=A.hz(m,o.x?A.fZ(A.tT(m,m,m,m,m,m,m,m,m,m),m,m):A.AQ(new A.ao7(o),q,new A.az(16,16,16,16),!0),B.B,m,m,m,m,m,m,m,m,m)
 k.push(new A.Di(q,r,B.yZ,110,55,new A.ao8(o),m))
 r=A.e0(20)
