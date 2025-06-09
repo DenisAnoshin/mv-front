@@ -87040,11 +87040,11 @@ s.toString
 return B.d.b2(r,s)},
 $S:512}
 A.aBp.prototype={
-$1(a){return new A.lx(new A.NP("https://93.183.68.21:3000"))},
+$1(a){return new A.lx(new A.NP("https://api.multivisionhub.com"))},
 $S:513}
 A.aBq.prototype={
 $1(a){var s=new A.kj(A.q(t.S,t.a),$.aB())
-s.a=new A.lx(new A.NP("https://93.183.68.21:3000"))
+s.a=new A.lx(new A.NP("https://api.multivisionhub.com"))
 return s},
 $S:514}
 A.P8.prototype={
@@ -87402,15 +87402,15 @@ m=A.q(o,n)
 m.m(0,"transports",A.b(["websocket"],t.s))
 m.F(0,"autoConnect")
 m.m(0,"query",A.a6(["Authorization","Bearer "+a1],n,n))
-l=A.fr("wss://93.183.68.21:3001")
+l=A.fr("wss://api.multivisionhub.com/ws/")
 k=l.gex()+"://"+l.gkD(l)+":"+l.goP(l)
 j=l.gdW(l)
 i=$.aAM.ak(0,k)&&$.aAM.h(0,k).d.ak(0,j)
 h=J.d(m.h(0,"forceNew"),!0)||J.d(m.h(0,"force new connection"),!0)||!1===m.h(0,"multiplex")||i
 g=A.bT("io")
-if(h){$.aPK().aV(B.w,"ignoring socket cache for wss://93.183.68.21:3001",null,null)
-g.b=A.aIj(m,"wss://93.183.68.21:3001")}else{f=$.aAM.h(0,k)
-if(f==null){f=A.aIj(m,"wss://93.183.68.21:3001")
+if(h){$.aPK().aV(B.w,"ignoring socket cache for wss://api.multivisionhub.com/ws/",null,null)
+g.b=A.aIj(m,"wss://api.multivisionhub.com/ws/")}else{f=$.aAM.h(0,k)
+if(f==null){f=A.aIj(m,"wss://api.multivisionhub.com/ws/")
 $.aAM.m(0,k,f)}g.b=f}if(l.glL(l).length!==0&&m.h(0,"query")==null)m.m(0,"query",l.glL(l))
 else if(t.f.b(m.h(0,"query")))m.m(0,"query",A.aF_(m.h(0,"query")))
 f=g.aW()
