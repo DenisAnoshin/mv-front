@@ -1,11 +1,11 @@
 {
-    "name": "multivision",
-    "short_name": "multivision",
+    "name": "mv",
+    "short_name": "mv",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Multivision",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
