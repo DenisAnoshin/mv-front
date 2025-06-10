@@ -87126,11 +87126,11 @@ s.toString
 return B.d.b2(r,s)},
 $S:514}
 A.aBB.prototype={
-$1(a){return new A.lG(new A.NT("http://localhost:3000"))},
+$1(a){return new A.lG(new A.NT("https://api.multivisionhub.com"))},
 $S:515}
 A.aBC.prototype={
 $1(a){var s=new A.kn(A.q(t.S,t.a),$.aA())
-s.a=new A.lG(new A.NT("http://localhost:3000"))
+s.a=new A.lG(new A.NT("https://api.multivisionhub.com"))
 return s},
 $S:516}
 A.Pd.prototype={
